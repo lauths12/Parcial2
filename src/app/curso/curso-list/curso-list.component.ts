@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Curso } from '../Curso';
-import { CursosService } from '../cursos.service';
-
+import { Curso } from '../curso';
+import { CursoService } from '../curso.service';
 
 @Component({
-  selector: 'app-cursos-listar',
-  templateUrl: './cursos-listar.component.html',
-  styleUrls: ['./cursos-listar.component.css']
+  selector: 'app-curso-list',
+  templateUrl: './curso-list.component.html',
+  styleUrls: ['./curso-list.component.css']
 })
-export class CursosListarComponent implements OnInit {
+export class CursoListComponent implements OnInit {
+
+
   cursos: Array<Curso> = [];
-  tienecurso: boolean= false;
-  nombres : Array<number> = [];
+  name : Array<number> = [];
   selected: boolean = false;
   selectedCursos!: Curso;
 
-  constructor(private cursoService: CursosService) { }
+  constructor(private cursoService: CursoService) { }
 
   getCursos(): void {
     this.cursoService.getCursos().subscribe((cursos) => {
       this.cursos = cursos;
-      this.tienecurso = false;
     });
   }
 
@@ -32,6 +31,4 @@ export class CursosListarComponent implements OnInit {
   ngOnInit() {
     this.getCursos();
   }
-
 }
-
