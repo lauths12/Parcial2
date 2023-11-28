@@ -1,0 +1,18 @@
+.titulo-score{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #A7CDA6;
+    margin: 0 auto;
+
+}
+
+.texto-score{
+    color: #A7CDA6;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.card{
+    margin: 30px auto;
+}

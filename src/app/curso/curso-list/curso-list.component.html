@@ -1,0 +1,26 @@
+
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Plataforma</th>
+          <th>Lanzamiento</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td >{{ curso.id }}</td>
+          <td class="show-card" (click)="onSelected(curso)">{{ curso.name }}</td>
+          <td>{{ curso.platform }}</td>
+          <td>{{ curso.launch_year }}</td>
+          <td>{{ curso.duration_hours }}</td>
+        </tr>
+      </tbody>
+    </table>
+<div class="col-6" *ngIf="selected">
+  <app-restaurante-detail [cursoDetail]="selectedCurso"></app-curso-detail></div>
+</div>
